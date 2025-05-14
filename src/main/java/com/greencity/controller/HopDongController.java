@@ -66,4 +66,9 @@ public class HopDongController {
     public List<HopDong> getByGiaTri(@RequestParam Double minValue, @RequestParam Double maxValue) {
         return hopDongService.findByGiaTriBetween(minValue, maxValue);
     }
+
+    @GetMapping("/search")
+    public List<HopDong> search(@RequestParam(required = false) String moTa) {
+        return hopDongService.search(moTa);
+    }
 } 
